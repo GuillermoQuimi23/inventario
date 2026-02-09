@@ -11,13 +11,13 @@ class Database {
     private $charset;
     private $conn;
 
-    public function __construct() {
-        $this->host = DB_HOST;
-        $this->db_name = DB_NAME;
-        $this->username = DB_USER;
-        $this->password = DB_PASS;
-        $this->charset = DB_CHARSET;
-    }
+public function __construct() {
+    $this->host = getenv('DB_HOST');
+    $this->db_name = getenv('DB_NAME');
+    $this->username = getenv('DB_USER');
+    $this->password = getenv('DB_PASS');
+    $this->charset = 'utf8mb4';
+}
 
     /**
      * Obtener la conexión a la base de datos
